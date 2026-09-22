@@ -4,6 +4,8 @@ use App\Livewire\Auth\Login;
 use App\Livewire\Caracteristicas\CaracteristicasCreate;
 use App\Livewire\Caracteristicas\CaracteristicasIndex;
 use App\Livewire\Dashboard\Dashboard;
+use App\Livewire\Funcionarios\FuncionariosCreate;
+use App\Livewire\Funcionarios\FuncionariosIndex;
 use App\Livewire\Movimentacao\MovimentacaoCreate;
 use App\Livewire\Movimentacao\MovimentacaoIndex;
 use App\Livewire\Produto\ProdutoCreate;
@@ -32,6 +34,12 @@ Route::get('login', Login::class)->name('login');
 
 Route::get('dashboard', Dashboard::class)->name('dashboard');
 
+
+// Rotas de Funcionários
+Route::get('/funcionarios', FuncionariosIndex::class)->name('funcionarios.index');
+Route::get('/funcionarios/create', FuncionariosCreate::class)->name('funcionarios.create');
+
+// Rotas de Características
 
 Route::post('/logout', function (Request $request) {
     Auth::logout();

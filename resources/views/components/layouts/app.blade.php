@@ -63,18 +63,7 @@
                     {{-- MENU ESQUERDA --}}
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-                        {{-- DASHBOARD --}}
-                        <li class="nav-item">
-
-                            <a
-                                class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}"
-                                href="{{ route('dashboard') }}"
-                            >
-                                <i class="bi bi-speedometer2 me-1"></i>
-                                Dashboard
-                            </a>
-
-                        </li>
+                       
 
 
                         {{-- PRODUTOS --}}
@@ -189,6 +178,46 @@
                                     >
                                         <i class="bi bi-plus-circle me-2"></i>
                                         Nova Movimentação
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                        </li>
+
+
+                         {{-- FUNCIONARIOS --}}
+                        <li class="nav-item dropdown">
+
+                            <a
+                                class="nav-link dropdown-toggle {{ request()->routeIs('funcioarios.*') ? 'active' : '' }}"
+                                href="#"
+                                role="button"
+                                data-bs-toggle="dropdown"
+                            >
+                                <i class="bi bi-arrow-left-right me-1"></i>
+                                Funcionários
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                <li>
+                                    <a
+                                        class="dropdown-item"
+                                        href="{{ route('funcionarios.index') }}"
+                                    >
+                                        <i class="bi bi-clock-history me-2"></i>
+                                        Listar funcionarios
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a
+                                        class="dropdown-item"
+                                        href="{{ route('funcionarios.create') }}"
+                                    >
+                                        <i class="bi bi-plus-circle me-2"></i>
+                                        Criar Funcionarios
                                     </a>
                                 </li>
 

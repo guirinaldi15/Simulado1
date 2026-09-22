@@ -12,11 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('funcionarios', function (Blueprint $table) {
-            $table->id();
-            $table->string('nome', 80);
-            $table->string('funcao', 50);
-            $table->timestamps();
-        });
+        $table->id();
+        $table->string('nome');
+        $table->string('email')->unique();
+        $table->string('cpf')->unique();
+        $table->string('cargo');
+        $table->timestamps();
+    });
     }
 
     /**

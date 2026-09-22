@@ -10,6 +10,8 @@ class funcionario extends Model
     use HasFactory;
     protected $fillable = [
         'nome',
-        'funcao'
+        'email',
+        'cpf',
+        'cargo'
     ];
 }
