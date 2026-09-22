@@ -1,21 +1,37 @@
 <div>
 
-    {{-- TÍTULO --}}
-    <div class="mb-4">
+    {{-- TÍTULO E BOTÃO DE SAÍDA --}}
+    <div class="mb-4 d-flex justify-content-between align-items-center">
 
-        <h2 class="fw-bold">
-            Dashboard
-        </h2>
+        <div>
+            <h2 class="fw-bold mb-0">
+                Dashboard
+            </h2>
+            <p class="text-muted mb-0">
+                Visão geral do controle de estoque
+            </p>
+        </div>
 
-        <p class="text-muted">
-            Visão geral do controle de estoque
-        </p>
+        {{-- Novo Botão de Saída --}}
+        <div>
+            <a href="{{ route('logout') }}" 
+               class="btn btn-outline-danger d-flex align-items-center gap-2"
+               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                <i class="bi bi-box-arrow-right"></i>
+                Sair
+            </a>
+
+            {{-- Formulário Oculto de Logout exigido pelo Laravel --}}
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
+        </div>
 
     </div>
 
 
     {{-- CARDS --}}
-    <div class="row g-4 mb-4">
+    <div class="row g-4 mb-3">
 
         {{-- PRODUTOS --}}
         <div class="col-md-3">
@@ -140,7 +156,7 @@
                                 Movimentações
                             </small>
 
-                            <h2 class="fw-bold mt-2">
+                            <h2 class="fw-bold mt-6">
                                 {{ $totalMovimentacoes }}
                             </h2>
 
